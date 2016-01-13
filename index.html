@@ -2,25 +2,39 @@
 <head>
 	<title></title>
 	<meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="css/css_video_player.css">
 	<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 	<script type="text/javascript" src="js/GetBrowser.js"></script>
-	<script type="text/javascript" src="js/LoadElementsByBrowser.js"></script>
 	<script type="text/javascript" src="js/ControlVideo.js"></script>
 </head>
 <body>
 <br>
-<br>
-<button id="subtitles" type="button" data-state="subtitles"  style="display:none;">On/Off Subtitles</button>
-<br>
-<br>
-<video id="video" controls preload="metadata" autoplay width="50%">
+
+<!-- Video Player -->
+<div id="video-container">
+  <video id="my_video" width="100%" height="100%">
    <source src="https://www.dropbox.com/s/ovue5iihk1m2l0l/test.mp4?dl=1" 
    type="video/mp4">
    <track src="subtitles/test.vtt" kind="subtitles" srclang="en" label="English"  default/> 
 </video>
 
+<!-- Video Controls -->
+  <div id="video_controls_bar">
+    <button id="playpausebtn"></button>
+
+    <span id="curtimetext">00:00</span>
+    <input id="seekslider" type="range" min="0" max="100" value="0" step="1"><span id="durtimetext">00:00</span>
+    <button id="mutebtn">Mute</button>
+    <input id="volumeslider" type="range" min="0" max="100" value="100" step="1">
+    <button id="fullscreenbtn"></button>
+  </div>
+  <!-- End of Video Controls -->
+
+</div>
+<!-- End of Video Player -->
 
 
 </body>
+
 </html>
 
